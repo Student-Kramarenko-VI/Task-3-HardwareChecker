@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class = "box">
+      <span class = "label">CPU %</span>
+      <span id="cpu">-</span>
+    </div>
+    <div class = "box">
+      <span class = "label">Доступно памяти (%)</span>
+      <span id="mem">-</span>
+    </div>
+    <div class = "box">
+      <span class = "label">Общий объём памяти (GB)</span>
+      <span id="total-mem">-</span>
+    </div>
+    <div class = "box">
+      <span class = "label">Текущая платформа</span>
+      <span id="platform">-</span>
+    </div>
+
+    <script>
+      const electron = require("electron");
+      const ipcRenderer = electron.ipcRenderer;
+      ipcRenderer.on("cpu", (event, data) => 
+      {
+        console.log("cpu", data);
+        document.getElementById("cpu").innerHTML = data;
+      });
+      ipcRenderer.on("mem", (event, data) => 
+      {
+        console.log("mem", data);
+        document.getElementById("mem").innerHTML = data;
+      });
+      ipcRenderer.on("total-mem", (event, data) => 
+      {
+        console.log("total-mem", data);
+        document.getElementById("total-mem").innerHTML = data;
+      });
+      ipcRenderer.on("platform", (event, data) => 
+      {
+        console.log("platform", data);
+        document.getElementById("platform").innerHTML = data;
+      });
+    </script>
+  </body>
+</html>

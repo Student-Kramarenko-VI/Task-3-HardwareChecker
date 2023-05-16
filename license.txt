@@ -1,0 +1,7 @@
+The software product of the student IPZ-110 Kramarenko V.I. was made within the framework of laboratory work No. 3.
+Cross-platform programming, ZIEIT.
+
+Special thanks:
+-Kramarenko Viktor Ivanovich (for work)
+-Merzhynskyi Yevgeny Kostyantynovych (for instructions)
+-StackOverflow site (for overwhelming help with fixing the bug)
